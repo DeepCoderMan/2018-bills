@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9D68B8B8-6E92-4472-AD3C-5229A2079B6C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bills</RootNamespace>
+    <AssemblyName>Bills</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>CommonUI\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="billsData.cs" />
+    <Compile Include="Control\billsList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\billsList.Designer.cs">
+      <DependentUpon>billsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CTCT.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Other\JsonOpretion.cs" />
+    <Compile Include="Other\Logs.cs" />
+    <Compile Include="Other\StopWatch.cs" />
+    <Compile Include="Other\XMLoperation.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sql\SqLliteData.cs" />
+    <EmbeddedResource Include="Control\billsList.resx">
+      <DependentUpon>billsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="CommonUI\CommonUI.csproj">
+      <Project>{A84A6D03-C9A7-4032-98A3-3A697E5E8078}</Project>
+      <Name>CommonUI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\%2802,10%29.png" />
+    <Content Include="Resources\%2838,05%29.png" />
+    <Content Include="Resources\%2847,06%29.png" />
+    <Content Include="Resources\10.png" />
+    <Content Include="Resources\11.png" />
+    <Content Include="Resources\13.png" />
+    <Content Include="Resources\14.png" />
+    <Content Include="Resources\15.png" />
+    <Content Include="Resources\16.png" />
+    <Content Include="Resources\17.png" />
+    <Content Include="Resources\18.png" />
+    <Content Include="Resources\19.png" />
+    <Content Include="Resources\2.png" />
+    <Content Include="Resources\4.png" />
+    <Content Include="Resources\8.png" />
+    <Content Include="Resources\9.png" />
+    <Content Include="Resources\91.png" />
+    <Content Include="Resources\About.png" />
+    <Content Include="Resources\Activity Monitor.png" />
+    <Content Include="Resources\AFAM-00 Overall.JPG" />
+    <Content Include="Resources\AFAM-00 Overall1.JPG" />
+    <Content Include="Resources\Aperture_72px_1175175_easyicon.net.png" />
+    <Content Include="Resources\Appstore_32px_1107714_easyicon.net.png" />
+    <Content Include="Resources\Apps_do_icon_72px_1081620_easyicon.net.png" />
+    <Content Include="Resources\Background.png" />
+    <Content Include="Resources\back_72px_522534_easyicon.net.png" />
+    <Content Include="Resources\banner.png" />
+    <Content Include="Resources\bikewheel_72px_1180473_easyicon.net.png" />
+    <Content Include="Resources\blue_save_32px_569350_easyicon.net.png" />
+    <Content Include="Resources\blue_stop_play_back_32px_569353_easyicon.net.png" />
+    <Content Include="Resources\camera.png" />
+    <Content Include="Resources\Camera_64px_1194554_easyicon.net.png" />
+    <Content Include="Resources\camera_72px_1123748_easyicon.net.png" />
+    <Content Include="Resources\camera_72px_1145184_easyicon.net.png" />
+    <Content Include="Resources\Camera_72px_1194554_easyicon.net.png" />
+    <Content Include="Resources\Cancel.png" />
+    <Content Include="Resources\Castle_Crashers_Blue_32px_1107725_easyicon.net.png" />
+    <Content Include="Resources\Close.png" />
+    <Content Include="Resources\close_24px_1181428_easyicon.net.png" />
+    <Content Include="Resources\Close_up_24px_1181430_easyicon.net.png" />
+    <Content Include="Resources\Config.png" />
+    <Content Include="Resources\Connections_logo.png" />
+    <Content Include="Resources\down.png" />
+    <Content Include="Resources\epson-scara-light-sinta-14-1.jpg" />
+    <Content Include="Resources\Folder%2520Open.png" />
+    <Content Include="Resources\forward_next_72px_522533_easyicon.net.png" />
+    <Content Include="Resources\gear_72px_1121275_easyicon.net.png" />
+    <Content Include="Resources\go-up.png" />
+    <Content Include="Resources\Google_Chrome_72px_1175195_easyicon.net.png" />
+    <Content Include="Resources\IN3.png" />
+    <Content Include="Resources\Manual.png" />
+    <Content Include="Resources\Minimize.png" />
+    <Content Include="Resources\next_72px_1156896_easyicon.net.png" />
+    <Content Include="Resources\next_72px_535343_easyicon.net.png" />
+    <Content Include="Resources\ooopic_1489383448.png" />
+    <Content Include="Resources\origin.png" />
+    <Content Include="Resources\Pause.png" />
+    <Content Include="Resources\RSS_button_72px_1104607_easyicon.net.png" />
+    <Content Include="Resources\Save-icon.png" />
+    <Content Include="Resources\setup_72px_1127412_easyicon.net.png" />
+    <Content Include="Resources\Spec Image.png" />
+    <Content Include="Resources\start play.png" />
+    <Content Include="Resources\start-button-md.png" />
+    <Content Include="Resources\Stop2.png" />
+    <Content Include="Resources\stop_72px_534893_easyicon.net.png" />
+    <Content Include="Resources\STS_Green_circle.png" />
+    <Content Include="Resources\STS_Red_circle.png" />
+    <Content Include="Resources\Teach.png" />
+    <Content Include="Resources\Template_32px_511634_easyicon.net.png" />
+    <Content Include="Resources\UI-04%28操作员%29.png" />
+    <Content Include="Resources\UI-04%28管理员%29.png" />
+    <Content Include="Resources\UI-04%28超级管理员%29.png" />
+    <Content Include="Resources\Users.JPG" />
+    <Content Include="Resources\Users.png" />
+    <Content Include="Resources\user_online_72px_1174119_easyicon.net.png" />
+    <Content Include="Resources\virtualbox_72px_1174847_easyicon.net.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
